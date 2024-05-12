@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header'
 import ExploreMenu from '../../components/ExploreMenu/ExploreMenu'
 import BookDisplay from '../../components/BookDisplay/BookDisplay'
 import AppDownload from '../../components/AppDownload/AppDownload'
+import Filter from '../../components/SearchFilter/Filter'
 const Home = () => {
  
   const[category,setCategory] = useState("All");
@@ -11,7 +12,9 @@ const Home = () => {
   return (
     <div>
       <Header/>
+      <Filter />
       <ExploreMenu category={category} setCategory={setCategory}/>
+      
       <BookDisplay category={category}/>
       <AppDownload/>
     </div>

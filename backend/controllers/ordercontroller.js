@@ -70,6 +70,37 @@ try {
   res.json({success:false,message:"Error"})
 }
 }
+//User Order
+const userOrders = async (req,res)=>{
+  try{
+    const orders = await orederModel.find({userId:req.body.userId});
+    res.json({success:true,data:orders})
+  }  catch(error){
+    console.log(error)
+    res.json({success:false,message:"Error"})
+  }
+}
 
+//Listing orders for Admin Panel
+const listOrders = async(req,res)=>{
+  try {
+    const orders = await orederModel.find({});
+    res.json({success:true,data:orders});
+  } catch (error) {
+    console.log(error);
+    res.json({success:false,message:"Error"});
+  }
+}
 
-export { placeOrder,verifyOrder }
+//api for updating status
+const updateStatus = async(req,res) =>{
+  try {
+      await orederModel.findByIdAndUpdate(req.body.orderId,{status:req.body.status})
+      res.json({success:true,message:"status updated"})
+  } catch (error) {
+      console.log(error);
+      res.json({success:false,mesage:"Error"});
+  }
+}
+
+export { placeOrder,verifyOrder,userOrders,listOrders,updateStatus}

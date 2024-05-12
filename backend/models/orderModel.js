@@ -4,7 +4,7 @@ const orderSchema=new mongoose.Schema({
     items:{type:Array,required:true},
     amount:{type:Number,required:true},
     address:{type:Object,required:true},
-    status:{type:String},//required:true
+    status:{type:String ,default:"In The Bookshop"},//required:true
     date:{type:Date,default:Date.now()},
     payment:{type:Boolean,default:false}
 

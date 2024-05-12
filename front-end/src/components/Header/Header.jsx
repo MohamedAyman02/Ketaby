@@ -7,7 +7,6 @@ const Header = () => {
       <div className="header-contents">
         <h2>Order Yoour Books here</h2>
         <p>Choose from a diverse options of books from many categories.
-          <button>View Books</button>
         </p>
       </div>
     </div>

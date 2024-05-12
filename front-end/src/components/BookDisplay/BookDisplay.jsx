@@ -3,7 +3,7 @@ import './BookDisplay.css'
 import { useContext } from 'react'
 import { StoreContext } from '../../context/StoreContext'
 import BookItem from '../BookItem/BookItem'
-
+import Filter from '../SearchFilter/Filter'
 const BookDisplay = ({category}) => {
 
     const{booklist}=useContext(StoreContext)
