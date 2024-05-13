@@ -11,26 +11,26 @@ const placeOrder = async (req, res) => {
                 userId: req.body.userId,
                 items: req.body.items,
                 amount: req.body.amount,
-                address: req.body.address
+                address: req.body.address// data that get from input
             }
         )
         await newOrder.save();
         await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
         const line_items = req.body.items.map((item) => ({
             price_data: {
-                currency: "inr",
+                currency: "USD",
                 product_data: {
                     name: item.name,
-                    images: [item.image]
+                    images: [item.images]
                 },
-                unit_amount: item.price * 100
+                unit_amount: item.price *100
             },
             quantity: item.quantity
         
       }))
       line_items.push({
         price_data: {
-          currency: "inr",
+          currency: "USD",
           product_data: {
             name: "Delivry charges",
             images: ["https://i.imgur.com/EHyR2nP.png"]
