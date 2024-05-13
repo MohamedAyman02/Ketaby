@@ -1,4 +1,5 @@
-// eslint-disable-next-line no-unused-vars
+//admin
+//eslint-disable-next-line no-unused-vars
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Sidebar from './components/Sidebar/Sidebar'
